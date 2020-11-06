@@ -1,9 +1,18 @@
 import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import { TableContainer, Table, TableHead, TableRow, TableCell, Paper, TableBody } from '@material-ui/core';
+import {
+  TableContainer,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  Paper,
+  TableBody,
+} from '@material-ui/core';
+import ResultTableRow from './TableRow/TableRow.component';
 
-const ResultsTable = ({ dispatch, results }) => {
+const ResultsTable = ({ results }) => {
   const cells = {
     id: 'ID',
     box_id: 'Box ID',
@@ -30,11 +39,7 @@ const ResultsTable = ({ dispatch, results }) => {
         </TableHead>
         <TableBody>
           {rows.map((item) => (
-            <TableRow key={item.id}>
-              {_.values(item).map((value, i) => (
-                <TableCell key={i}>{value}</TableCell>
-              ))}
-            </TableRow>
+            <ResultTableRow key={item.id} {...item} />
           ))}
         </TableBody>
       </Table>
@@ -43,7 +48,6 @@ const ResultsTable = ({ dispatch, results }) => {
 };
 
 Table.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   results: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -58,7 +62,11 @@ Table.propTypes = {
       reading: PropTypes.number,
       reading_ts: PropTypes.string,
     }),
-  ).isRequired,
+  ),
+};
+
+Table.defaulProps = {
+  results: [],
 };
 
 export default ResultsTable;

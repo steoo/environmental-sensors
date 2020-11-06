@@ -4,15 +4,16 @@ import { reducer } from '../../store/reducer';
 import { getSensorReadings } from '../../api';
 import { setResults } from '../../store/actions';
 import Table from '../Table/Table.component';
+import Pagination from '../Table/Pagination/Pagination.component';
 
 function AppComponent() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { params, results } = state;
+  const { params, readings, totalCount } = state;
 
   const getData = useCallback(async () => {
-    const readings = await getSensorReadings(params);
+    const responseResult = await getSensorReadings(params);
 
-    dispatch(setResults(readings));
+    dispatch(setResults(responseResult));
   }, [params]);
 
   useEffect(() => {
@@ -21,7 +22,8 @@ function AppComponent() {
 
   return (
     <div>
-      <Table dispatch={dispatch} results={results} />
+      <Table results={readings} />
+      <Pagination currentPage={params.page} count={+totalCount} dispatch={dispatch} />
     </div>
   );
 }

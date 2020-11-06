@@ -36,6 +36,7 @@
       "prettier/react"
     ],
     "rules": {
+      "camelcase": "off",
       "dot-notation": [
         "error"
       ],
@@ -77,7 +78,7 @@
   },
   "prettier": {
     "singleQuote": true,
-    "printWidth": 120,
+    "printWidth": 100,
     "trailingComma": "all"
   },
   "browserslist": {

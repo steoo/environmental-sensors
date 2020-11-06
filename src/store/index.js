@@ -1,5 +1,6 @@
 const initialState = {
-  results: [],
+  readings: [],
+  totalCount: 0,
   params: {
     page: 1,
     limit: 10,
