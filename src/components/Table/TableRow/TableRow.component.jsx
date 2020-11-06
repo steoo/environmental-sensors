@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TableRow, TableCell } from '@material-ui/core';
 
-const ResultTableRow = ({ id, box_id, sensor_type, name, reading, reading_ts }) => {
+const ResultTableRow = ({ id, box_id, sensor_type, name, unit, reading, reading_ts }) => {
   return (
-    <TableRow>
+    <TableRow component="tr">
       <TableCell>{id}</TableCell>
       <TableCell>{box_id}</TableCell>
       <TableCell>{sensor_type}</TableCell>
       <TableCell>{name}</TableCell>
+      <TableCell>{unit}</TableCell>
       <TableCell>{reading}</TableCell>
       <TableCell>{reading_ts}</TableCell>
     </TableRow>

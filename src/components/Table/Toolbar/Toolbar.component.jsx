@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { TablePagination, Select, InputLabel, MenuItem } from '@material-ui/core';
+import { TablePagination, Select, InputLabel, MenuItem, FormControl } from '@material-ui/core';
 import { getFilterBy, getNextPage, getPrevPage, getSortBy } from '../../../store/actions';
 import { DEFAULT_LIMIT, DEFAULT_SORT } from '../../../api/constants';
 
@@ -11,13 +11,22 @@ const FlexContainer = styled.div`
   align-items: center;
 `;
 
+const RootContainer = styled(FlexContainer)`
+  margin-top: 25px;
+  padding: 0 10px;
+`;
+
 const SelectContainer = styled(FlexContainer)`
-  margin-left: 10px;
+  margin-left: 25px;
+
+  label {
+    min-width: 120px;
+  }
 `;
 
 const Toolbar = ({ currentPage, count, dispatch }) => {
   const [sortBy, setSortBy] = useState(DEFAULT_SORT);
-  const [filterBy, setFilterBy] = useState('');
+  const [filterBy, setFilterBy] = useState('none');
 
   const onChangePage = (event, page) => {
     if (page < currentPage - 1) {
@@ -40,31 +49,35 @@ const Toolbar = ({ currentPage, count, dispatch }) => {
   }, [sortBy, dispatch]);
 
   useEffect(() => {
-    dispatch(getFilterBy({ filterName: 'sensor_type', filterValue: filterBy }));
+    if (filterBy !== 'none') {
+      dispatch(getFilterBy({ filterName: 'sensor_type', filterValue: filterBy }));
+    }
   }, [filterBy, dispatch]);
 
   const isVisible = currentPage && count;
 
   return isVisible ? (
-    <FlexContainer>
+    <RootContainer>
       <FlexContainer>
-        <FlexContainer>
-          <InputLabel id="sort-by-select">Sort By:</InputLabel>
+        <FormControl>
+          <InputLabel id="sort-by-select">Sort By</InputLabel>
           <Select labelId="sort-by-select" onChange={onChangeSort} value={sortBy}>
             <MenuItem value="reading_ts">Timestamp</MenuItem>
             <MenuItem value="sensor_type">Sensor Type</MenuItem>
           </Select>
-        </FlexContainer>
+        </FormControl>
         <SelectContainer>
-          <InputLabel id="filter-by-select">Filter By Sensor Type:</InputLabel>
-          <Select labelId="filter-by-select" onChange={onChangeFilter} value={filterBy}>
-            <MenuItem value="">None</MenuItem>
-            <MenuItem value="O3">O3</MenuItem>
-            <MenuItem value="NO2">NO2</MenuItem>
-            <MenuItem value="CO">CO</MenuItem>
-            <MenuItem value="TEMP">TEMP</MenuItem>
-            <MenuItem value="RH">RH</MenuItem>
-          </Select>
+          <FormControl>
+            <InputLabel id="filter-by-select">Sensor Type</InputLabel>
+            <Select labelId="filter-by-select" onChange={onChangeFilter} value={filterBy}>
+              <MenuItem value="none">None</MenuItem>
+              <MenuItem value="O3">O3</MenuItem>
+              <MenuItem value="NO2">NO2</MenuItem>
+              <MenuItem value="CO">CO</MenuItem>
+              <MenuItem value="TEMP">TEMP</MenuItem>
+              <MenuItem value="RH">RH</MenuItem>
+            </Select>
+          </FormControl>
         </SelectContainer>
       </FlexContainer>
       <TablePagination
@@ -75,7 +88,7 @@ const Toolbar = ({ currentPage, count, dispatch }) => {
         rowsPerPageOptions={[DEFAULT_LIMIT]}
         onChangePage={onChangePage}
       />
-    </FlexContainer>
+    </RootContainer>
   ) : null;
 };
 

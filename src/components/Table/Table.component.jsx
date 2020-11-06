@@ -9,15 +9,24 @@ import {
   TableCell,
   Paper,
   TableBody,
+  makeStyles,
 } from '@material-ui/core';
 import ResultTableRow from './TableRow/TableRow.component';
 
+const useStyles = makeStyles({
+  container: {
+    maxHeight: 440,
+  },
+});
+
 const ResultsTable = ({ results }) => {
+  const classes = useStyles();
   const cells = {
     id: 'ID',
     box_id: 'Box ID',
     sensor_type: 'Sensor Type',
     name: 'Name',
+    unit: 'Unit',
     reading: 'Reading',
     reading_ts: 'Timestamp',
   };
@@ -28,8 +37,8 @@ const ResultsTable = ({ results }) => {
   const rows = results.map((item) => _.pick(item, keys));
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer component={Paper} className={classes.container}>
+      <Table stickyHeader>
         <TableHead>
           <TableRow>
             {values.map((item, i) => (

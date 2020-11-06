@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components Table Row should render, without crashing 1`] = `
+<div>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          Box-A2-CO
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          Box-A2
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          CO
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          Carbon monoxide
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          ppm
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          437
+        </td>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          2019-09-10T00:30:00
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
