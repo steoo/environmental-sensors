@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components Toolbar should render, without crashing 1`] = `
+<div>
+  <div
+    class="sc-bdfBwQ sc-gsTCUz ilXUMA jNCWBR"
+  >
+    <div
+      class="sc-bdfBwQ ilXUMA"
+    >
+      <div
+        class="MuiFormControl-root"
+      >
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+          data-shrink="true"
+          id="sort-by-select"
+        >
+          Sort By
+        </label>
+        <div
+          class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+        >
+          <div
+            aria-haspopup="listbox"
+            aria-labelledby="sort-by-select"
+            class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+            role="button"
+            tabindex="0"
+          >
+            Timestamp
+          </div>
+          <input
+            aria-hidden="true"
+            class="MuiSelect-nativeInput"
+            tabindex="-1"
+            value="reading_ts"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="sc-bdfBwQ sc-dlfnbm ilXUMA bEGaqS"
+      >
+        <div
+          class="MuiFormControl-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+            data-shrink="true"
+            id="filter-by-select"
+          >
+            Sensor Type
+          </label>
+          <div
+            class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-labelledby="filter-by-select"
+              class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+              role="button"
+              tabindex="0"
+            >
+              None
+            </div>
+            <input
+              aria-hidden="true"
+              class="MuiSelect-nativeInput"
+              tabindex="-1"
+              value="none"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiTablePagination-root"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      >
+        <div
+          class="MuiTablePagination-spacer"
+        />
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        >
+          1-100 of 800
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+            tabindex="0"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

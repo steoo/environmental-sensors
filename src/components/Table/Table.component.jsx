@@ -1,26 +1,22 @@
 import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import {
   TableContainer,
   Table,
   TableHead,
   TableRow,
   TableCell,
-  Paper,
   TableBody,
-  makeStyles,
 } from '@material-ui/core';
 import ResultTableRow from './TableRow/TableRow.component';
 
-const useStyles = makeStyles({
-  container: {
-    maxHeight: 440,
-  },
-});
+const Container = styled(TableContainer)`
+  max-height: 440px;
+`;
 
 const ResultsTable = ({ results }) => {
-  const classes = useStyles();
   const cells = {
     id: 'ID',
     box_id: 'Box ID',
@@ -37,7 +33,7 @@ const ResultsTable = ({ results }) => {
   const rows = results.map((item) => _.pick(item, keys));
 
   return (
-    <TableContainer component={Paper} className={classes.container}>
+    <Container>
       <Table stickyHeader>
         <TableHead>
           <TableRow>
@@ -52,7 +48,7 @@ const ResultsTable = ({ results }) => {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    </Container>
   );
 };
 

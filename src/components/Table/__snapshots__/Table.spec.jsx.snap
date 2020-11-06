@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components Table should render, without crashing 1`] = `
+<div>
+  <div
+    class="MuiTableContainer-root sc-bdfBwQ bSeEsD"
+  >
+    <table
+      class="MuiTable-root MuiTable-stickyHeader"
+    >
+      <thead
+        class="MuiTableHead-root"
+      >
+        <tr
+          class="MuiTableRow-root MuiTableRow-head"
+        >
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+            scope="col"
+          >
+            ID
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+            scope="col"
+          >
+            Box ID
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+            scope="col"
+          >
+            Sensor Type
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+            scope="col"
+          >
+            Name
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+            scope="col"
+          >
+            Unit
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+            scope="col"
+          >
+            Reading
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader"
+            scope="col"
+          >
+            Timestamp
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="MuiTableBody-root"
+      >
+        <tr
+          class="MuiTableRow-root"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Box-A1-O3
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Box-A1
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            O3
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Ozone
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            ppm
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            672
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            2019-09-10T00:00:00
+          </td>
+        </tr>
+        <tr
+          class="MuiTableRow-root"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Box-A1-NO2
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Box-A1
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            NO2
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Nitrogen dioxide
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            ppm
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            193
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            2019-09-10T00:00:00
+          </td>
+        </tr>
+        <tr
+          class="MuiTableRow-root"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Box-A1-CO
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Box-A1
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            CO
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            Carbon monoxide
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            ppm
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            331
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body"
+          >
+            2019-09-10T00:00:00
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
