@@ -1,6 +1,7 @@
 export const GET_PREV_PAGE = 'GET_PREV_PAGE';
 export const GET_NEXT_PAGE = 'GET_NEXT_PAGE';
 export const GET_SORT_BY = 'GET_SORT_BY';
+export const GET_FILTER_BY = 'GET_FILTER_BY';
 export const SET_RESULTS = 'SET_RESULTS';
 
 const getPrevPage = () => ({
@@ -18,6 +19,13 @@ const getSortBy = (sortBy) => ({
   },
 });
 
+const getFilterBy = (filterBy) => ({
+  type: GET_FILTER_BY,
+  payload: {
+    filterBy,
+  },
+});
+
 const setResults = ({ readings, totalCount }) => ({
   type: SET_RESULTS,
   payload: {
@@ -26,4 +34,4 @@ const setResults = ({ readings, totalCount }) => ({
   },
 });
 
-export { getPrevPage, getNextPage, setResults, getSortBy };
+export { getPrevPage, getNextPage, setResults, getSortBy, getFilterBy };

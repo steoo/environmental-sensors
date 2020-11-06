@@ -1,4 +1,4 @@
-import { GET_PREV_PAGE, GET_NEXT_PAGE, SET_RESULTS, GET_SORT_BY } from './actions';
+import { GET_PREV_PAGE, GET_NEXT_PAGE, SET_RESULTS, GET_SORT_BY, GET_FILTER_BY } from './actions';
 
 const reducer = (state, { type, payload = {} }) => {
   const { params } = state;
@@ -28,6 +28,16 @@ const reducer = (state, { type, payload = {} }) => {
           ...params,
           page: 1,
           sort: payload.sortBy,
+        },
+      };
+    }
+    case GET_FILTER_BY: {
+      return {
+        ...state,
+        params: {
+          ...params,
+          page: 1,
+          filter: payload.filterBy,
         },
       };
     }

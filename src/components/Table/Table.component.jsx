@@ -38,8 +38,8 @@ const ResultsTable = ({ results }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((item) => (
-            <ResultTableRow key={item.id} {...item} />
+          {rows.map((item, i) => (
+            <ResultTableRow key={i} {...item} />
           ))}
         </TableBody>
       </Table>

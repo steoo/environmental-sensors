@@ -1,22 +1,34 @@
 import axios from 'axios';
-import { baseUrl } from './constants';
+import { baseUrl, DEFAULT_LIMIT } from './constants';
 
 const getSensorReadings = async ({
   page = 1,
-  limit = 10,
+  limit = DEFAULT_LIMIT,
   sort = '',
   filter = '',
   order = 'ASC',
 }) => {
   try {
+    let params = {
+      _page: page,
+      _limit: limit,
+      _order: order,
+    };
+
+    if (sort) {
+      params = { ...params, _sort: sort };
+    }
+
+    if (filter) {
+      const { filterName, filterValue } = filter;
+
+      if (filterValue) {
+        params = { ...params, [filterName]: filterValue };
+      }
+    }
+
     const response = await axios.get(`${baseUrl}/sensorReadings`, {
-      params: {
-        _page: page,
-        _limit: limit,
-        _sort: sort,
-        _filter: filter,
-        _order: order,
-      },
+      params,
     });
 
     return {
