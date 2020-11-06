@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useReducer } from 'react';
-import { Paper } from '@material-ui/core';
+import React, { useCallback, useEffect, useReducer, useState } from 'react';
+import { Paper, LinearProgress } from '@material-ui/core';
 import styled from 'styled-components';
 import initialState from '../../store';
 import { reducer } from '../../store/reducer';
@@ -13,14 +13,31 @@ const Container = styled.div`
   margin: 50px auto;
 `;
 
+const ErrorContainer = styled.div`
+  text-align: center;
+  color: red;
+  padding: 10px 0;
+`;
+
 const AppComponent = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
   const { params, readings, totalCount } = state;
 
   const getData = useCallback(async () => {
-    const responseResult = await getSensorReadings(params);
+    setError(false);
+    setIsLoading(true);
 
-    dispatch(setResults(responseResult));
+    try {
+      const responseResult = await getSensorReadings(params);
+
+      dispatch(setResults(responseResult));
+    } catch (e) {
+      setError(true);
+    }
+
+    setIsLoading(false);
   }, [params]);
 
   useEffect(() => {
@@ -30,7 +47,9 @@ const AppComponent = () => {
   return (
     <Container>
       <Paper>
-        <Table results={readings} />
+        {readings && <Table results={readings} />}
+        {isLoading && <LinearProgress />}
+        {error && <ErrorContainer>An Unexpected Error Occurred</ErrorContainer>}
       </Paper>
       <Toolbar currentPage={params.page} count={+totalCount} dispatch={dispatch} />
     </Container>

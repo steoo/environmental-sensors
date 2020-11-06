@@ -8,36 +8,32 @@ const getSensorReadings = async ({
   filter = '',
   order = 'ASC',
 }) => {
-  try {
-    let params = {
-      _page: page,
-      _limit: limit,
-      _order: order,
-    };
+  let params = {
+    _page: page,
+    _limit: limit,
+    _order: order,
+  };
 
-    if (sort) {
-      params = { ...params, _sort: sort };
-    }
-
-    if (filter) {
-      const { filterName, filterValue } = filter;
-
-      if (filterValue) {
-        params = { ...params, [filterName]: filterValue };
-      }
-    }
-
-    const response = await axios.get(`${baseUrl}/sensorReadings`, {
-      params,
-    });
-
-    return {
-      readings: response.data,
-      totalCount: response.headers['x-total-count'],
-    };
-  } catch (error) {
-    return error;
+  if (sort) {
+    params = { ...params, _sort: sort };
   }
+
+  if (filter) {
+    const { filterName, filterValue } = filter;
+
+    if (filterValue) {
+      params = { ...params, [filterName]: filterValue };
+    }
+  }
+
+  const response = await axios.get(`${baseUrl}/sensorReadings`, {
+    params,
+  });
+
+  return {
+    readings: response.data,
+    totalCount: response.headers['x-total-count'],
+  };
 };
 
 export { getSensorReadings };
