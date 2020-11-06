@@ -2,6 +2,7 @@
   "name": "environmental-sensors",
   "version": "0.1.0",
   "private": true,
+  "license": "no-license",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -15,13 +16,65 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "api": "json-server --watch db/db.json --port 3002"
   },
   "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
     "extends": [
+      "airbnb",
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "prettier",
+      "plugin:prettier/recommended",
+      "prettier/react"
+    ],
+    "rules": {
+      "dot-notation": [
+        "error"
+      ],
+      "no-underscore-dangle": [
+        "error"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "react/no-array-index-key": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/prop-types": "off",
+      "prettier/prettier": "error",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never"
+        }
+      ],
+      "import/no-mutable-exports": "off",
+      "import/prefer-default-export": "off",
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "trailingComma": "all"
   },
   "browserslist": {
     "production": [
@@ -34,5 +87,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "json-server": "^0.16.2",
+    "prettier": "^2.1.2"
   }
 }
